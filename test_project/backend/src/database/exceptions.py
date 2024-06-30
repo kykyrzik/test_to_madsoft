@@ -9,3 +9,6 @@ class CommitError(DatabaseError):
 class RollbackError(DatabaseError):
     pass
 
+
+class InvalidParamsError(DatabaseError):
+    pass

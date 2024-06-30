@@ -1,15 +1,13 @@
 import abc
 from types import TracebackType
-from typing import TypeVar, AsyncContextManager, Optional, Type
-
-GatewayType = TypeVar("GatewayType", bound="BaseGateway")
+from typing import TypeVar, AsyncContextManager, Optional, Type, Self
 
 
 class BaseGateway(abc.ABC):
     def __init__(self, context_manager: AsyncContextManager) -> None:
         self.__context_manager = context_manager
 
-    async def __aenter__(self) -> GatewayType:
+    async def __aenter__(self) -> Self:
         await self.__context_manager.__aenter__()
         return self
 

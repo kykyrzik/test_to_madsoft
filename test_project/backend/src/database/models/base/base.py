@@ -1,5 +1,10 @@
+from typing import TypeVar
+
 from sqlalchemy.orm import DeclarativeBase
 from sqlalchemy.ext.declarative import declared_attr
+
+
+ModelType = TypeVar("ModelType", bound="Base")
 
 
 class Base(DeclarativeBase):
