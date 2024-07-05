@@ -5,11 +5,28 @@ description = ""
 authors = ["Nick Ivanukov <ivanukov78@gmail.com>"]
 readme = "README.md"
 
+[tool.mypy]
+disable_error_code = ["union-attr", "var-annotated"]
+enable_incomplete_feature = ["Unpack"]
+follow_imports_for_stubs = true
+pretty = true
+show_absolute_path = true
+hide_error_codes = false
+show_error_context = true
+strict = true
+warn_unreachable = true
+warn_no_return = true
+
+
 [tool.poetry.dependencies]
 python = "^3.12"
 fastapi = "^0.111.0"
 uvicorn = "^0.30.1"
 sqlalchemy = "^2.0.31"
+alembic = "^1.13.2"
+nest-asyncio = "^1.6.0"
+pydantic-settings = "^2.3.4"
+asyncpg = "^0.29.0"
 
 
 [tool.poetry.group.dev.dependencies]
